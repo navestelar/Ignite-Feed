@@ -34,7 +34,7 @@ export function Post({ post }: PostProps) {
 
     const [newCommentText, setNewCommentText] = useState('')
 
-    const publishedDteFormatted = format(post.publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    const publishedDateFormatted = format(post.publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR,
     })
 
@@ -78,7 +78,7 @@ export function Post({ post }: PostProps) {
                         <span>{post.author.role}</span>
                     </div>
                 </div>
-                <time title={publishedDteFormatted} dateTime={post.publishedAt.toISOString()}>{publishedDateRelativeToNow}</time>
+                <time title={publishedDateFormatted} dateTime={post.publishedAt.toISOString()}>{publishedDateRelativeToNow}</time>
             </header>
 
             <div className={styles.content}>
